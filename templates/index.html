@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=600px, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>stepgod-player</title>
+    <link rel="stylesheet" href="../styles/index.css"/>
+  </head>
+
+  <body>
+    <audio loop src="../songs/stepgod - schizophren.mp3" id="song" ontimeupdate="updateProgressValue()"></audio>
+    <img src="../pictures/main_vanica.jpg" alt="background" id="BG"/>
+    <div class="super-container">
+      <nav id="volume">
+        <button class="nice-button" onclick="playRandomSong()">.</button>
+            <ul>
+              <li><button class="nice-button" onclick="document.getElementById('song').volume+=0.1"><img src ="../pictures/arrow-up.png" height="30" width="30"></button></li>
+              <li><button class="nice-button" onclick="document.getElementById('song').volume-=0.1"><img src ="../pictures/arrow-down.png" height="30" width="30"></button></li>
+            </ul>
+      </nav>
+      <nav id="text-container">
+            <ul class="text-paragraph"></ul>
+      </nav>
+      <div class="container">
+        <div class="song-name"></div>
+        <div class="song-title">stepgod - schizophren</div>
+        <img src="../pictures/main_vanica.jpg" alt="thumbnail" id="thumbnail"/>
+        <div class="box"></div>
+        <img src="../pictures/play-button.ico" alt="play/pause" onclick="playPause()" id="pp"/>
+        <img src="../pictures/arrow.png" alt="nextSong" id="ns" onclick="nextSong()"/>
+        <img src="../pictures/arrow.png" alt="previousSong" id="ps" onclick="previousSong()"/>
+
+        <input
+          type="range"
+          id="progressBar"
+          min="0"
+          max=""
+          value="0"
+          onchange='const progressBar = document.querySelector("#progressBar");
+          document.querySelector("#song").currentTime = progressBar.value;'
+        >
+      </div>
+   </div>
+    <script src="../scripts/player.js"></script>
+  </body>
+</html>
