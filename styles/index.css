@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Lobster&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background: #000;
 }
@@ -288,19 +293,46 @@ input[type=range].color14::-webkit-slider-runnable-track {
 }
 
 #text-container {
+  min-width: 60px;
+  transition: min-width .3s ease-in-out;
+  cursor: pointer;
   color: white;
   box-shadow: 0 0 15px black;
-  border-radius: 10px 0px 10px 10px;
+  border-radius: 10px 0px 0px 10px;
   background: -webkit-linear-gradient(
     60deg,
     rgb(0, 0, 0),
     rgb(0, 0, 0)
   );
   position: absolute;
-  left: -135%;
+  right: 100%;
   z-index: 1;
   margin-top: 15px;
-  width: 500px;
+}
+
+.expanded#text-container {
+  min-width: 300px;
+}
+
+#text-container.expanded .text-expanded {
+  padding: 1.5em;
+  min-height: 17px;
+  white-space: nowrap;
+}
+
+#text-container.expanded .text-collapsed {
+  display: none;
+}
+
+#text-container:not(.expanded) .text-expanded {
+  display: none;
+}
+
+#text-container:not(.expanded) .text-collapsed {
+  width: 70px;
+  height: 45px;
+  text-align: center;
+  padding-top: 20px;
 }
 
 #container>button {
@@ -308,7 +340,7 @@ input[type=range].color14::-webkit-slider-runnable-track {
 }
 
 #volume>button {
-  color: transparent;
+  color: white;
 }
 
 #volume>button, #volume li {
@@ -347,4 +379,5 @@ input[type=range].color14::-webkit-slider-runnable-track {
 
 #volume button {
   padding: 10px 20px;
+  font-size: 23px;
 }
