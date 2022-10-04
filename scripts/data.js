@@ -13,7 +13,8 @@ const songs = [
     "../songs/stepgod - narben.mp3",
     "../songs/stepgod - gemeinsam einsam.mp3",
     "../songs/stepgod - fake depressed.mp3",
-    "../songs/stepgod - sinner.mp3"
+    "../songs/stepgod - sinner.mp3",
+    "../songs/stepgod - zufall.mp3"
   ];
   
 const thumbnails = [
@@ -31,7 +32,8 @@ const thumbnails = [
 "../pictures/main_vanica.jpg",
 "../pictures/main_vanica.jpg",
 "../pictures/main_vanica.jpg",
-"../pictures/cool_vanica.jpg"
+"../pictures/cool_vanica.jpg",
+"../pictures/main_vanica.jpg"
 ];
 
 let songNames = [
@@ -49,7 +51,8 @@ let songNames = [
     "narben",
     "gemeinsam einsam",
     "fake depressed",
-    "sinner"
+    "sinner",
+    "zufall"
 ];
 
 const songGradients = [
@@ -60,7 +63,7 @@ const songGradients = [
 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)', 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)',
 'linear-gradient(45deg, rgb(72, 0, 139), rgb(0, 199, 149))', 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)',
 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)', 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)',
-'linear-gradient(45deg, rgb(72, 0, 139), rgb(0, 199, 149))'
+'linear-gradient(45deg, rgb(72, 0, 139), rgb(0, 199, 149))','linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)'
 ];
 
 const buttonGradient = [
@@ -71,7 +74,7 @@ const buttonGradient = [
 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)', 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)',
 'linear-gradient(235deg, rgb(72, 0, 139), rgb(0, 199, 149))', 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)',
 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)', 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)',
-'linear-gradient(235deg, rgb(72, 0, 139), rgb(0, 199, 149))'
+'linear-gradient(235deg, rgb(72, 0, 139), rgb(0, 199, 149))','linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)'
 ];
 
 const textMapping = [
@@ -697,4 +700,38 @@ const textMapping = [
     Ein Uhr mittags und ich geh' passed out in meinem Zimmer<br>
     Bin ein schlechtes Vorbild, denn ich bin ein Sinner<br>
     Breche Herzen, doch es juckt mich nicht, denn ich fühl' nix mehr<br>`},{timecode:185, text: 
-    ``}]]
+    ``}],
+  //zufall
+  [{timecode:6, text: 
+    ``},{timecode:8, text: 
+    `(Ts-Ts-Ts-Tsurreal)<br>`},{timecode:27.7, text: 
+    ``},{timecode:41.55, text: 
+    `Bin am worken, damit ihr es endlich gut habt<br>
+    Hustle den ganzen Tag, lass' nix mehr dem Zufall<br>
+    Und vielleicht fall' ich bald um<br>
+    Doch ich war zu lang schon stumm<br>`},{timecode:55.4, text: 
+    `Bin am worken, damit ihr es endlich gut habt<br>
+    Hustle den ganzen Tag, lass' nix mehr dem Zufall<br>
+    Und vielleicht fall' ich bald um<br>
+    Doch ich war zu lang schon stumm<br>`},{timecode:69, text: 
+    `In der Schulzeit wurd ich ausgelacht, für was ich bin<br>
+    Heute sind das die Leute, die meine Lieder stream'n<br>
+    Und ich wusste, es wird nie einfach<br>
+    Weil für das Leben gibt еs keine Freifahrt<br>`},{timecode:83.3, text: 
+    `Doch ich hab' еs ausgesucht, damit ihr's besser habt<br>
+    Damit meine Fam nie wieder mehr die Geldnot plagt<br>
+    Damit ich sagen kann, „Ich hab's geschafft<br>
+    Heute Hype, damals wurde ich ausgelacht“<br>`},{timecode:96.9, text: 
+    `Hatte 'nen Dream, zog nach Berlin<br>
+    Bin am brenn'n so wie Benzin<br>
+    Hatte 'nen Dream, zog nach Berlin<br>
+    Ließ meine Fam ganz allein steh'n<br>`},{timecode:110.7, text: 
+    `Bin am worken, damit ihr es endlich gut habt<br>
+    Hustle den ganzen Tag, lass' nix mehr dem Zufall<br>
+    Und vielleicht fall' ich bald um<br>
+    Doch ich war zu lang schon stumm<br>`},{timecode:124.5, text: 
+    `Bin am worken, damit ihr es endlich gut habt<br>
+    Hustle den ganzen Tag, lass' nix mehr dem Zufall<br>
+    Und vielleicht fall' ich bald um<br>
+    Doch ich war zu lang schon stumm<br>`},{timecode:140, text: 
+    ``},]];
