@@ -1,16 +1,3 @@
-const songTitle = document.querySelector(".song-title");
-const thumbnail = document.querySelector("#thumbnail");
-const progressBar = document.querySelector("#progressBar");
-const mainContainerGradient = document.querySelector(".box");
-const mainContainerGradient2 = document.querySelector(".song-name");
-const song = document.querySelector("#song");
-const BG = document.querySelector("#BG");
-const pp = document.querySelector("#pp");
-const Volume = document.getElementById('song').volume;
-
-let nextSongPlay = false;
-let playing = true;
-let songIndex = 0;
 
 function playPause() {
   if(playing) {
@@ -18,6 +5,7 @@ function playPause() {
     mainContainerGradient.style.backgroundImage = data[3][songIndex];
     document.querySelector('#volume').style.backgroundImage = data[4][songIndex];
     document.querySelector('#text-container').style.backgroundImage = data[4][songIndex];
+    document.querySelector('.track-list').style.backgroundImage = data[4][songIndex];
     progressBar.classList = [data[6][songIndex]];
 
     pp.src = "../pictures/pause-button.png";
@@ -65,6 +53,8 @@ function updateProgressValue() {
     }
      timeCodeIndex++;
   }
+  if (song.volume < 0.05) song.volume = 0.01; 
+  if (song.volume > 0.95) song.volume = 1; 
   document.querySelector(".text-expanded").innerHTML = data[5][songIndex][timeCodeIndex].text
   //console.log(song.currentTime)
 
@@ -76,16 +66,19 @@ function textContainerClick() {
 
 function playRandomSong() {
   shuffleSongs(data);
+  nextSong();
 }
 
 function shuffleSongs(array) {
-  for(let a = 0; a < 6; a++){
+
+  for(let a = 0; a < 6; a++) {
   let currentIndex = array[a].length,  randomIndex;
 
   while (currentIndex != 0) {
 
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
+
     for(let i = 0; i < array.length; i++) {
       [array[i][currentIndex], array[i][randomIndex]] = [
         array[i][randomIndex], array[i][currentIndex]];
@@ -103,25 +96,25 @@ document.addEventListener('keyup', event => {
 
 document.addEventListener('keyup', event => {
   if (event.code === 'ArrowLeft') {
-    previousSong();
+    song.currentTime -= 5;
   }
 })
 
 document.addEventListener('keyup', event => {
   if (event.code === 'ArrowRight') {
-    nextSong();
+    song.currentTime += 5;
   }
 })
 
 document.addEventListener('keyup', event => {
   if (event.code === 'ArrowUp') {
-    document.getElementById('song').volume+=0.1
+    document.getElementById('song').volume+=0.05
   }
 })
 
 document.addEventListener('keyup', event => {
   if (event.code === 'ArrowDown') {
-    document.getElementById('song').volume-=0.1
+    document.getElementById('song').volume-=0.05
   }
 })
 
@@ -139,13 +132,19 @@ document.addEventListener('keyup', event => {
 
 document.addEventListener('keyup', event => {
   if (event.code === 'KeyW') {
-    document.getElementById('song').volume+=0.1
+    document.getElementById('song').volume+=0.05
   }
 })
 
 document.addEventListener('keyup', event => {
   if (event.code === 'KeyS') {
-    document.getElementById('song').volume-=0.1
+    document.getElementById('song').volume-=0.05
+  }
+})
+
+document.addEventListener('keyup', event => {
+  if (event.code === 'KeyR') {
+    playRandomSong();
   }
 })
 

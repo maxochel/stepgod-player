@@ -1,3 +1,17 @@
+const songTitle = document.querySelector(".song-title");
+const thumbnail = document.querySelector("#thumbnail");
+const progressBar = document.querySelector("#progressBar");
+const mainContainerGradient = document.querySelector(".box");
+const mainContainerGradient2 = document.querySelector(".song-name");
+const song = document.querySelector("#song");
+const BG = document.querySelector("#BG");
+const pp = document.querySelector("#pp");
+const Volume = document.getElementById('song').volume;
+
+let nextSongPlay = false;
+let playing = true;
+let songIndex = 0;
+
 let data = [
 
   //songs
