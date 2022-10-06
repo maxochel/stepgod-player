@@ -1,4 +1,7 @@
-const songs = [
+let data = [
+
+  //songs
+  [
     "../songs/stepgod - schizophren.mp3",
     "../songs/stepgod - koma.mp3",
     "../songs/stepgod - rosen.mp3",
@@ -15,9 +18,9 @@ const songs = [
     "../songs/stepgod - fake depressed.mp3",
     "../songs/stepgod - sinner.mp3",
     "../songs/stepgod - zufall.mp3"
-  ];
-  
-const thumbnails = [
+  ],
+  //thumbnails
+  [
 "../pictures/main_vanica.jpg",
 "../pictures/main_vanica.jpg",
 "../pictures/cool_vanica.jpg",
@@ -34,9 +37,9 @@ const thumbnails = [
 "../pictures/main_vanica.jpg",
 "../pictures/cool_vanica.jpg",
 "../pictures/main_vanica.jpg"
-];
-
-let songNames = [
+  ],
+  //songNames
+  [
     "schizophren",
     "koma",
     "rosen",
@@ -53,9 +56,9 @@ let songNames = [
     "fake depressed",
     "sinner",
     "zufall"
-];
-
-const songGradients = [
+  ],
+  //songGradients
+  [
 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)', 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)',
 'linear-gradient(45deg, rgb(72, 0, 139), rgb(0, 199, 149))', 'linear-gradient(45deg, rgb(255 233 52), rgb(153 99 19))',
 'linear-gradient(45deg, rgb(72, 0, 139), rgb(0, 199, 149))', 'linear-gradient(45deg, rgb(255 233 52), rgb(153 99 19))',
@@ -64,9 +67,9 @@ const songGradients = [
 'linear-gradient(45deg, rgb(72, 0, 139), rgb(0, 199, 149))', 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)',
 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)', 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)',
 'linear-gradient(45deg, rgb(72, 0, 139), rgb(0, 199, 149))','linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)'
-];
-
-const buttonGradient = [
+  ],
+  //buttonGradients
+  [
 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)', 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)',
 'linear-gradient(235deg, rgb(72, 0, 139), rgb(0, 199, 149))', 'linear-gradient(45deg, rgb(255 233 52), rgb(153 99 19))',
 'linear-gradient(235deg, rgb(72, 0, 139), rgb(0, 199, 149))', 'linear-gradient(45deg, rgb(255 233 52), rgb(153 99 19))',
@@ -75,9 +78,9 @@ const buttonGradient = [
 'linear-gradient(235deg, rgb(72, 0, 139), rgb(0, 199, 149))', 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)',
 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)', 'linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)',
 'linear-gradient(235deg, rgb(72, 0, 139), rgb(0, 199, 149))','linear-gradient(45deg, rgb(0,0,0) 100%, rgb(0,0,0) 100%)'
-];
-
-const textMapping = [
+  ],
+  //textMapping
+  [
   //schizophren
   [{timecode:0.4, text: 
     ``},{timecode:16.09, text: 
@@ -734,4 +737,5 @@ const textMapping = [
     Hustle den ganzen Tag, lass' nix mehr dem Zufall<br>
     Und vielleicht fall' ich bald um<br>
     Doch ich war zu lang schon stumm<br>`},{timecode:140, text: 
-    ``},]];
+    ``},]],
+  ["color0","color1","color2","color3","color4","color5","color6","color7","color8","color9","color10","color11","color12","color13","color14","color15","color16",]];

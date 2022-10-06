@@ -14,11 +14,11 @@ let songIndex = 0;
 
 function playPause() {
   if(playing) {
-    mainContainerGradient2.style.backgroundImage = songGradients[songIndex];
-    mainContainerGradient.style.backgroundImage = songGradients[songIndex];
-    document.querySelector('#volume').style.backgroundImage = buttonGradient[songIndex];
-    document.querySelector('#text-container').style.backgroundImage = buttonGradient[songIndex];
-    progressBar.classList = ['color' + songIndex];
+    mainContainerGradient2.style.backgroundImage = data[3][songIndex];
+    mainContainerGradient.style.backgroundImage = data[3][songIndex];
+    document.querySelector('#volume').style.backgroundImage = data[4][songIndex];
+    document.querySelector('#text-container').style.backgroundImage = data[4][songIndex];
+    progressBar.classList = [data[6][songIndex]];
 
     pp.src = "../pictures/pause-button.png";
     song.play();
@@ -35,38 +35,38 @@ function playPause() {
 
 function nextSong() {
   songIndex++;
-  if(songIndex > songs.length-1) songIndex = 0;
-  song.src = songs[songIndex];
-  thumbnail.src = thumbnails[songIndex];
-  BG.src = thumbnails[songIndex];
+  if(songIndex > data[0].length-1) songIndex = 0;
+  song.src = data[0][songIndex];
+  thumbnail.src = data[1][songIndex];
+  BG.src = data[1][songIndex];
   playing = true;
   playPause();
-  songTitle.innerHTML = songNames[songIndex];
+  songTitle.innerHTML = data[2][songIndex];
 }
 
 function previousSong() {
   songIndex--;
-  if(songIndex < 0) songIndex = songs.length-1;
-  song.src = songs[songIndex];
-  thumbnail.src = thumbnails[songIndex];
-  BG.src = thumbnails[songIndex];
+  if(songIndex < 0) songIndex = data[0].length-1;
+  song.src = data[0][songIndex];
+  thumbnail.src = data[1][songIndex];
+  BG.src = data[1][songIndex];
   playing = true;
   playPause();
-  songTitle.innerHTML = songNames[songIndex];
+  songTitle.innerHTML = data[2][songIndex];
 }
 
 function updateProgressValue() {
   progressBar.max = song.duration;
   progressBar.value = song.currentTime;
   let timeCodeIndex = 0;
-  for(let tm of textMapping[songIndex]) {
+  for(let tm of data[5][songIndex]) {
     if(tm.timecode > song.currentTime) {
         break;
     }
      timeCodeIndex++;
   }
-  document.querySelector(".text-expanded").innerHTML = textMapping[songIndex][timeCodeIndex].text
-  console.log(song.currentTime)
+  document.querySelector(".text-expanded").innerHTML = data[5][songIndex][timeCodeIndex].text
+  //console.log(song.currentTime)
 
 }
 
@@ -75,28 +75,25 @@ function textContainerClick() {
 }
 
 function playRandomSong() {
-  const randomSong = Math.floor(Math.random() * 14);
-  for(let i = 0; i < randomSong; i++) {
-    nextSong();
-  }
-  //shuffleSongs(songs)
-  //shuffleSongs(songNames)
+  shuffleSongs(data);
 }
 
-/*function shuffleSongs(array) {
-  let currentIndex = array.length,  randomIndex;
+function shuffleSongs(array) {
+  for(let a = 0; a < 6; a++){
+  let currentIndex = array[a].length,  randomIndex;
 
   while (currentIndex != 0) {
 
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
-
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
+    for(let i = 0; i < array.length; i++) {
+      [array[i][currentIndex], array[i][randomIndex]] = [
+        array[i][randomIndex], array[i][currentIndex]];
+    }
   }
-
+}
   return array;
-}*/
+}
 
 document.addEventListener('keyup', event => {
   if (event.code === 'Space') {
