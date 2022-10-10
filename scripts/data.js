@@ -10,7 +10,7 @@ const Volume = document.getElementById('song').volume;
 
 let nextSongPlay = false;
 let playing = true;
-let songIndex = 0;
+var songIndex = 0;
 
 let data = [
 
@@ -127,11 +127,12 @@ let data = [
     Die Stimmen sagen mir, ich soll jetzt gehen<br>
     Die Stimmen sagen mir, ich soll aufgeben<br>`}, {timecode: 175, text:
     `Ich bin schizophren, kann den Shit nicht mehr seh'n<br>
-    Ich bin schizophren, wann wird der Shit geh'n?<br>`}, {timecode: 230, text:
+    Ich bin schizophren, wann wird der Shit geh'n?<br>`}, {timecode: 208.5, text:
     `Ich lauf' alleine herum, sehe kein'n um mich rum<br>
     Doch ich fühl' mich verfolgt, hab' den Shit nie gewollt<br>
     Lauf' herum, seh' Gesichter, mein altes Ich ist nicht da<br>
-    Ich bin schizophren, mein altes Ich wird mir fehl'n<br>`}],
+    Ich bin schizophren, mein altes Ich wird mir fehl'n<br>`},{timecode: 230, text:
+    ``}],
   //koma
   [{timecode:34.5, text: 
     ``},{timecode:87, text: 
@@ -251,9 +252,10 @@ let data = [
     `Sieben Tage drunk, die ganze Woche nur Party<br>
     Zwei Tapes in der Nacht, weil ich finde den Schlaf nie<br>
     Wieder todes drunk<br>
-    Am Rosenthaler Platz<br>`},{timecode:145, text:
+    Am Rosenthaler Platz<br>`},{timecode:131.8, text:
     `Wieder todes drunk<br>
-    Am Rosenthaler Platz<br>`}],
+    Am Rosenthaler Platz<br>`},{timecode:145, text:
+      ``}],
   //renn weg
   [{timecode:43.22, text: 
     ``},{timecode:53.2, text: 
@@ -531,10 +533,10 @@ let data = [
     Und deshalb sind meine Feelings heut auf Eis<br>`},{timecode:130, text: 
     `Meine Feelings sind am frier'n<br>`},{timecode:135, text: 
     `Und mein Kopf am explodier'n<br>`},{timecode:139, text: 
-    `Vor paar Jahr'n warst du hier, vor paar Jahr'n warst du hier<br>`},{timecode:142, text: 
+    `Vor paar Jahr'n warst du hier, vor paar Jahr'n warst du hier<br>`},{timecode:142.1, text: 
     `Vor paar Jahr'n warst du mir<br>`},{timecode:145.2, text: 
-    `Doch wie soll ich's reparier'n<br>`},{timecode:149, text: 
-    `Wenn du jemand andern liebst?<br>`},{timecode:153, text: 
+    `Doch wie soll ich's reparier'n<br>`},{timecode:149.1, text: 
+    `Wenn du jemand andern liebst?<br>`},{timecode:153.2, text: 
     `Wie wirst du drauf reagier'n<br>`},{timecode:156.8, text: 
     `Wenn ich heute Abend geh'?<br>`},{timecode:164.3, text: 
     `Schau' hoch Richtung Moonlight<br>
@@ -638,7 +640,8 @@ let data = [
     Und wir sind gemeinsam einsam<br>`},{timecode:130, text: 
     ``}],
   //fake depressed
-  [{timecode:10, text: 
+  [{timecode:6, text: 
+    `<br>`},{timecode:10, text: 
     `(Ts-Ts-Ts-Tsurreal)<br>`},{timecode:27, text: 
     ``},{timecode:41.2, text: 
     `Leute sagen, ich bin fake depressiv<br>
@@ -688,11 +691,12 @@ let data = [
     `Bin ein schlechtes Vorbild, denn ich bin ein Sinner<br>
     Ein Uhr mittags und ich geh' passed out in meinem Zimmer<br>
     Bin ein schlechtes Vorbild, denn ich bin ein Sinner<br>
-    Breche Herzen, doch es juckt mich nicht, denn ich fühl' nix mehr<br>`},{timecode:70.8, text: 
+    Breche Herzen, doch es juckt mich nicht, denn ich fühl' nix mehr<br>`},{timecode:69.8, text: 
     `Bin ein schlechtes Vorbild, denn ich bin ein Sinner<br>
     Ein Uhr mittags und ich geh' passed out in meinem Zimmer<br>
     Bin ein schlechtes Vorbild, denn ich bin ein Sinner<br>
-    Breche Herzen, doch es juckt mich nicht, denn ich fühl' nix mehr<br>`},{timecode:75.6, text: 
+    Breche Herzen, doch es juckt mich nicht, denn ich fühl' nix mehr<br>`},{timecode:71.6, text: 
+    ``},{timecode:75.6, text: 
     `Außer Hass in mir<br>`},{timecode:86.9, text: 
     `Sag, was ist mit mir los?<br>
     Leb' ein'n Film wie im Kino<br>
@@ -752,4 +756,9 @@ let data = [
     Und vielleicht fall' ich bald um<br>
     Doch ich war zu lang schon stumm<br>`},{timecode:140, text: 
     ``},]],
-  ["color0","color1","color2","color3","color4","color5","color6","color7","color8","color9","color10","color11","color12","color13","color14","color15","color16",]];
+  //colors
+  ["color0","color1","color2","color3","color4","color5","color6","color7","color8","color9","color10","color11","color12","color13","color14","color15","color16",]
+];
+
+//songMapping
+const songMapping = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];

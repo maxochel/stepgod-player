@@ -286,7 +286,7 @@ input[type=range].color14::-webkit-slider-runnable-track {
   );
   position: absolute;
   left: 100%;
-  top: 58%; 
+  top: 60%; 
   z-index: 1;
   margin-top: 10px;
   width: 180px;
@@ -303,11 +303,11 @@ input[type=range].color14::-webkit-slider-runnable-track {
   );
   position: absolute;
   left: 100%;
-  top: 1%; 
+  top: 0.5%; 
   z-index: 1;
   margin-top: 10px;
   padding-left: 5px;
-  padding: 1px;
+  padding: 3px;
   width: 180px;
 }
 
