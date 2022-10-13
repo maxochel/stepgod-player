@@ -111,14 +111,11 @@ document.addEventListener('keyup', event => {
   if (event.code === 'KeyD') {
     nextSong();
   }
-  if (event.code === 'KeyW' && song.volume < 1) {
-    song.volume+=0.05;
-  }
-  if (event.code === 'KeyS' && song.volume > 0.1) {
-    song.volume-=0.05;
-  }
   if (event.code === 'KeyR') {
     playRandomSong();
+  }
+  if (event.code === 'KeyQ') {
+    textContainerClick();
   }
 });
 
@@ -134,6 +131,11 @@ function keyDownHandler(e) {
   } else if (e.keyCode == 37 && song.volume > 0.1) {
     song.currentTime -= 5;
   } 
+  if (e.keyCode == 87 && song.volume < 1) {
+    song.volume+=0.05;
+  } else if (e.keyCode == 83 && song.volume > 0.1) {
+    song.volume-=0.05;
+  }
 }
 
 setInterval(updateProgressValue, 500);
