@@ -292,6 +292,23 @@ input[type=range].color14::-webkit-slider-runnable-track {
   width: 180px;
 }
 
+#opacity button {
+  box-shadow: 0 0 15px black;
+  border-radius: 10px 0px 0px 10px;
+  background: -webkit-linear-gradient(
+    60deg,
+    rgb(0, 0, 0),
+    rgb(0, 0, 0)
+  );
+  position: absolute;
+  right: 95%;
+  top: 85%; 
+  z-index: 1;
+  margin-top: 10px;
+  height: 55px;
+  width: 70px;
+}
+
 .track-list {
   box-shadow: 0 0 15px black;
   border-radius: 0px 10px 10px 0px;

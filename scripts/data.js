@@ -7,6 +7,7 @@ const song = document.querySelector("#song");
 const BG = document.querySelector("#BG");
 const pp = document.querySelector("#pp");
 const Volume = document.getElementById('song').volume;
+const navs = document.getElementsByTagName('nav');
 
 let nextSongPlay = false;
 let playing = true;

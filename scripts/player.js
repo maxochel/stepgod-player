@@ -101,6 +101,13 @@ function setSong(SongIndex) {
   renderList();
 }
 
+function opacity() {
+  for(nav of navs) {
+    if(nav.style.opacity == 1) nav.style.opacity = 0.05;
+    else {nav.style.opacity = 1;}
+  }
+}
+
 document.addEventListener('keyup', event => {
   if (event.code === 'Space') {
     playPause();
@@ -130,13 +137,15 @@ function keyDownHandler(e) {
     song.currentTime += 5;
   } else if (e.keyCode == 37 && song.volume > 0.1) {
     song.currentTime -= 5;
-  } 
-  if (e.keyCode == 87 && song.volume < 1) {
+  } else if (e.keyCode == 87 && song.volume < 1) {
     song.volume+=0.05;
   } else if (e.keyCode == 83 && song.volume > 0.1) {
     song.volume-=0.05;
+  } else if (e.keyCode == 69) {
+    opacity();
   }
 }
 
+opacity();
 setInterval(updateProgressValue, 500);
 
