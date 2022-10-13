@@ -15,13 +15,13 @@
       <nav id="volume">
         <button class="nice-button" onclick="playRandomSong()">randomize playlist</button>
             <ul>
-              <li><button class="nice-button" onclick="document.getElementById('song').volume+=0.05"><img src ="../pictures/arrow-up.png" height="30" width="30"></button></li>
-              <li><button class="nice-button" onclick="document.getElementById('song').volume-=0.05"><img src ="../pictures/arrow-down.png" height="30" width="30"></button></li>
+              <li><button class="nice-button" onclick="song.volume+=0.05"><img src ="../pictures/arrow-up.png" height="30" width="30"></button></li>
+              <li><button class="nice-button" onclick="song.volume-=0.05"><img src ="../pictures/arrow-down.png" height="30" width="30"></button></li>
             </ul>
       </nav>
       <nav class="track-list">
             <ul class="song-list">
-              <li onclick="setSong(0)">schizophren</li>
+              <li onclick="setSong(0)" class="current-song">schizophren</li>
               <li onclick="setSong(1)">koma</li>
               <li onclick="setSong(2)">rosen</li>
               <li onclick="setSong(3)">7 tage</li>

@@ -19,6 +19,7 @@ function playPause() {
     playing = true;
     thumbnail.style.width = "130%";
   }
+  renderList();
 }
 
 function nextSong() {
@@ -56,8 +57,7 @@ function updateProgressValue() {
   if (song.volume < 0.05) song.volume = 0.01; 
   if (song.volume > 0.95) song.volume = 1; 
   document.querySelector(".text-expanded").innerHTML = data[5][songMapping[songIndex]][timeCodeIndex].text;
-  //console.log(song.currentTime);
-
+  console.log(song.currentTime);
 }
 
 function textContainerClick() {
@@ -65,13 +65,20 @@ function textContainerClick() {
 }
 
 function playRandomSong() {
-  let ul = document.querySelector('.song-list');
-  ul.innerHTML = "";
   songMapping.sort(() => Math.random()-0.5);
   nextSong();
-  
+  renderList();
+}
+
+function renderList() {
+  let ul = document.querySelector('.song-list');
+  ul.innerHTML = "";
   for (let i = 0; i < songMapping.length; i++) {
-    ul.innerHTML += "<li onclick = setSong("+i+")>"+data[2][songMapping[i]]+"</li>";
+    if(i != songIndex) {
+      ul.innerHTML += "<li onclick = setSong("+i+")>"+data[2][songMapping[i]]+"</li>";
+    } else {
+      ul.innerHTML += "<li onclick = setSong("+i+") class='current-song'>"+data[2][songMapping[songIndex]]+"</li>";
+    }
   }
 }
 
@@ -91,23 +98,12 @@ function setSong(SongIndex) {
   pp.src = "../pictures/pause-button.png";
   playing = false;
   thumbnail.style.width = "160%";
+  renderList();
 }
 
 document.addEventListener('keyup', event => {
   if (event.code === 'Space') {
     playPause();
-  }
-  if (event.code === 'ArrowLeft') {
-    song.currentTime -= 5;
-  }
-  if (event.code === 'ArrowRight') {
-    song.currentTime += 5;
-  }
-  if (event.code === 'ArrowUp') {
-    document.getElementById('song').volume+=0.05;
-  }
-  if (event.code === 'ArrowDown') {
-    document.getElementById('song').volume-=0.05;
   }
   if (event.code === 'KeyA') {
     previousSong();
@@ -115,16 +111,30 @@ document.addEventListener('keyup', event => {
   if (event.code === 'KeyD') {
     nextSong();
   }
-  if (event.code === 'KeyW') {
-    document.getElementById('song').volume+=0.05;
+  if (event.code === 'KeyW' && song.volume < 1) {
+    song.volume+=0.05;
   }
-  if (event.code === 'KeyS') {
-    document.getElementById('song').volume-=0.05;
+  if (event.code === 'KeyS' && song.volume > 0.1) {
+    song.volume-=0.05;
   }
   if (event.code === 'KeyR') {
     playRandomSong();
   }
 });
+
+document.addEventListener("keydown", keyDownHandler, false);
+
+function keyDownHandler(e) {
+  if (e.keyCode == 38 && song.volume < 1) {
+    song.volume+=0.05;
+  } else if (e.keyCode == 40 && song.volume > 0.1) {
+    song.volume-=0.05;
+  } else if (e.keyCode == 39 && song.volume > 0.1) {
+    song.currentTime += 5;
+  } else if (e.keyCode == 37 && song.volume > 0.1) {
+    song.currentTime -= 5;
+  } 
+}
 
 setInterval(updateProgressValue, 500);
 
