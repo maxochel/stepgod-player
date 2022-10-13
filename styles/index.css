@@ -292,7 +292,7 @@ input[type=range].color14::-webkit-slider-runnable-track {
   width: 180px;
 }
 
-#opacity button {
+#opacity {
   box-shadow: 0 0 15px black;
   border-radius: 10px 0px 0px 10px;
   background: -webkit-linear-gradient(
@@ -305,6 +305,11 @@ input[type=range].color14::-webkit-slider-runnable-track {
   top: 85%; 
   z-index: 1;
   margin-top: 10px;
+  height: 55px;
+  width: 70px;
+}
+
+#opacity button {
   height: 55px;
   width: 70px;
 }

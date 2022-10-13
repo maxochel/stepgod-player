@@ -6,6 +6,7 @@ function playPause() {
     document.querySelector('#volume').style.backgroundImage = data[4][songMapping[songIndex]];
     document.querySelector('#text-container').style.backgroundImage = data[4][songMapping[songIndex]];
     document.querySelector('.track-list').style.backgroundImage = data[4][songMapping[songIndex]];
+    document.querySelector('#opacity').style.backgroundImage = data[4][songMapping[songIndex]];
     progressBar.classList = [data[6][songMapping[songIndex]]];
 
     pp.src = "../pictures/pause-button.png";
@@ -93,6 +94,7 @@ function setSong(SongIndex) {
   document.querySelector('#volume').style.backgroundImage = data[4][songMapping[songIndex]];
   document.querySelector('#text-container').style.backgroundImage = data[4][songMapping[songIndex]];
   document.querySelector('.track-list').style.backgroundImage = data[4][songMapping[songIndex]];
+  document.querySelector('#opacity').style.backgroundImage = data[4][songMapping[songIndex]];
   progressBar.classList = [data[6][songMapping[songIndex]]];
   song.play();
   pp.src = "../pictures/pause-button.png";
@@ -103,7 +105,7 @@ function setSong(SongIndex) {
 
 function opacity() {
   for(nav of navs) {
-    if(nav.style.opacity == 1) nav.style.opacity = 0.05;
+    if(nav.style.opacity == 1) nav.style.opacity = 0.2;
     else {nav.style.opacity = 1;}
   }
 }
