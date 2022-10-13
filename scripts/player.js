@@ -65,8 +65,14 @@ function textContainerClick() {
 }
 
 function playRandomSong() {
+  let ul = document.querySelector('.song-list');
+  ul.innerHTML = "";
   songMapping.sort(() => Math.random()-0.5);
   nextSong();
+  
+  for (let i = 0; i < songMapping.length; i++) {
+    ul.innerHTML += "<li onclick = setSong("+i+")>"+data[2][songMapping[i]]+"</li>";
+  }
 }
 
 function setSong(SongIndex) {
@@ -91,57 +97,30 @@ document.addEventListener('keyup', event => {
   if (event.code === 'Space') {
     playPause();
   }
-});
-
-document.addEventListener('keyup', event => {
   if (event.code === 'ArrowLeft') {
     song.currentTime -= 5;
   }
-});
-
-document.addEventListener('keyup', event => {
   if (event.code === 'ArrowRight') {
     song.currentTime += 5;
   }
-});
-
-document.addEventListener('keyup', event => {
   if (event.code === 'ArrowUp') {
     document.getElementById('song').volume+=0.05;
   }
-});
-
-document.addEventListener('keyup', event => {
   if (event.code === 'ArrowDown') {
     document.getElementById('song').volume-=0.05;
   }
-});
-
-document.addEventListener('keyup', event => {
   if (event.code === 'KeyA') {
     previousSong();
   }
-});
-
-document.addEventListener('keyup', event => {
   if (event.code === 'KeyD') {
     nextSong();
   }
-});
-
-document.addEventListener('keyup', event => {
   if (event.code === 'KeyW') {
     document.getElementById('song').volume+=0.05;
   }
-});
-
-document.addEventListener('keyup', event => {
   if (event.code === 'KeyS') {
     document.getElementById('song').volume-=0.05;
   }
-});
-
-document.addEventListener('keyup', event => {
   if (event.code === 'KeyR') {
     playRandomSong();
   }
