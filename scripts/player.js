@@ -59,6 +59,7 @@ function updateProgressValue() {
   if (song.volume > 0.95) song.volume = 1; 
   document.querySelector(".text-expanded").innerHTML = data[5][songMapping[songIndex]][timeCodeIndex].text;
   console.log(song.currentTime);
+
 }
 
 function textContainerClick() {
